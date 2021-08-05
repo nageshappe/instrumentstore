@@ -78,7 +78,7 @@ export default class Login extends Component {
             <div class="auth-wrapper" id="loginBox">
                 
                 <div  class="auth-inner">
-                            <form onSubmit={()=>this.login()}>
+                            <form onSubmit={()=>this.checkUser()}>
                                 <h3>Sign In</h3>
 
                                 <div className="form-group" >
