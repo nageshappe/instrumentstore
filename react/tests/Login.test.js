@@ -1,14 +1,6 @@
-// import { render, screen } from '@testing-library/react';
-// import App from './App';
-
-// test('renders learn react link', () => {
-//   render(<App />);
-//   const linkElement = screen.getByText(/learn react/i);
-//   expect(linkElement).toBeInTheDocument();
-// });
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
-import Login from "./components/Login/Login"
+import Login from "../components/Login/Login";
 import { MemoryRouter } from 'react-router-dom';
 
 
@@ -21,7 +13,6 @@ describe('Login Component', () => {
     const submitButton = screen.queryByTestId('submitButton');
     const loginBox = screen.queryByTestId('loginBox');
     const signinLink = screen.queryByTestId('signupLink');
-    console.log(email)
 
     test('feLogin1', () => {
         expect(email).toBeTruthy();

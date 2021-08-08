@@ -6,16 +6,16 @@ import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
-import { Link } from 'react-router-dom';
+// import Paper from '@material-ui/core/Paper';
+// import { Link } from 'react-router-dom';
 import { Button} from 'react-bootstrap';
 import DeleteIcon from '@material-ui/icons/Delete';
 import CreateIcon from '@material-ui/icons/Create';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
-import AdminNavbar from "./AdminNavbar"
-import ProductService from '../services/ProductService'
+import AdminNavBar from "../AdminNav/AdminNav"
+import ProductService from '../../../services/ProductService';
 import './listProduct.css'
-export default class ListProductComponent extends Component
+export default class Dashboard extends Component
 {
     constructor(props)
     {
@@ -94,12 +94,12 @@ export default class ListProductComponent extends Component
         const {items} = this.state;
         return (
             <>
-            <AdminNavbar/>
+            <AdminNavBar/>
             <div>
-                <Button className="btn" variant="contained" color="primary" onClick={this.addProduct}>
+                <Button data-testid="addInstrumentButton" className="btn" variant="contained" color="primary" onClick={this.addProduct}>
                     <ShoppingCartIcon/>Add Products
                 </Button>
-                <TableContainer className="table">
+                <TableContainer data-testid="adminDashboard" className="table">
                 <Table className="style" aria-label="customized table">
                 <TableHead className="head">
                     <TableRow className="hr">

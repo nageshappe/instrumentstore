@@ -8,11 +8,11 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import ShowMoreText from 'react-show-more-text';
-import ProductService from '../services/ProductService'
+import ProductService from '../../../services/ProductService';
 import './HomeComponent.css'
 import { getByDisplayValue } from '@testing-library/dom';
-import {} from './LogoutComponent'
-import UserNavbar from './UserNavbar'
+import {} from '../../LogoutComponent'
+import UserNavbar from '../../UserNav/UserNav'
 
 const useStyles = makeStyles({
     root: {
@@ -60,7 +60,7 @@ const useStyles = makeStyles({
                     <CardActionArea>
                     <CardMedia className="media"
                         component="img"
-                        alt="Furniture"
+                        alt="Instrument"
                         
                         image={product.imageUrl}
                       

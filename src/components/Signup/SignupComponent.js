@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-// import 'C:/Users/shashank/Desktop/finalhome/mainhome/node_modules/bootstrap/dist/css/bootstrap.min.css'
-import GuestNavbar from './GuestNavbar'
-import './LoginComponent.css'
-import LoginService from "../services/LoginService";
-import SignupService from "../services/SignupService";
+import GuestNavbar from '../GuestNavbar'
+import '../Login/LoginComponent.css'
+import LoginService from "../../services/LoginService";
+import SignupService from "../../services/SignupService";
 
 export default class SignUp extends Component {
 
@@ -83,24 +82,24 @@ export default class SignUp extends Component {
         return (
             <div>
             <GuestNavbar />
-            <div class="auth-wrapper">
-                <div class="auth-inner">
+            <div className="auth-wrapper" data-testid="signupBox">
+                <div className="auth-inner">
                 <form>
                 <h3>Sign Up</h3>
                 <div className="form-group">
                     <label>Email</label>
-                    <input id="email" type="email" className="form-control" placeholder="Enter email" 
+                    <input data-testid="email" type="email" className="form-control" placeholder="Enter email" 
                         value={this.state.email} onChange={this.changeEmailId}/>
                 </div>
                 <div className="form-group">
                     <label>Username</label>
-                    <input id="username" type="text" className="form-control" placeholder="Enter Username" 
+                    <input data-testid="username" type="text" className="form-control" placeholder="Enter Username" 
                          value={this.state.username} onChange={this.changeUsername}   />
                 </div>
 
                 <div className="form-group">
                     <label>Mobile Number</label>
-                    <input type="text" id="mobileNumber" className="form-control" placeholder="Enter Mobile Number"
+                    <input type="text" data-testid="mobilenumber" className="form-control" placeholder="Enter Mobile Number"
                         value={this.state.mobileNumber} onChange={this.changeMobileNumber} />
                 </div>
 
@@ -108,19 +107,19 @@ export default class SignUp extends Component {
 
                 <div className="form-group">
                     <label>Password</label>
-                    <input id="password" type="password" className="form-control" placeholder="Enter password" 
+                    <input data-testid="password" type="password" className="form-control" placeholder="Enter password" 
                         value={this.state.password} onChange={this.changePassword}/>
                 </div>
                 <div className="form-group">
                     <label>Re-enter Password</label>
-                    <input id="confirmPassword" type="password" className="form-control" placeholder="Confirm password"
+                    <input data-testid="confirmpassword" type="password" className="form-control" placeholder="Confirm password"
                         value={this.state.confirmPassword} onChange={this.changeConfirmPassword} />
                 </div>
                 <br></br>
-                <button id="submitButton" type="submit" className="btn btn-primary btn-block" onClick={this.signUpUser}>Sign Up</button>
+                <button data-testid="submitButton" type="submit" className="btn btn-primary btn-block" onClick={this.signUpUser}>Sign Up</button>
                 <br></br>
-                <div class="text-center" >
-                <a href="/login" id="signinLink" >Already a member?Click here</a>
+                <div className="text-center" >
+                <a href="/login" data-testid="signinLink" >Already a member?Click here</a>
             </div>
             </form>
             </div>

@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-
-import GuestNavbar from './GuestNavbar';
-// import './LoginComponent.css'
-import LoginService from "../services/LoginService";
+import GuestNavbar from "../GuestNavbar"
+import './LoginComponent.css'
+import LoginService from "../../services/LoginService";
 
 export default class Login extends Component {
 
@@ -90,7 +89,7 @@ export default class Login extends Component {
 
                                 <div className="form-group">
                                     <label>Password</label>
-                                    <input data-testid="Password" type="password" className="form-control" placeholder="Enter password" 
+                                    <input data-testid="password" type="password" className="form-control" placeholder="Enter password" 
                                      value={this.state.password} onChange={this.changePassword}/>
                                 </div>
           

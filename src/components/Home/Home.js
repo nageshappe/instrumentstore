@@ -3,7 +3,7 @@ import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Button from 'react-bootstrap/Button'
-import Navbar from './UserNavbar';
+import UserNavbar from '../UserNav/UserNav';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
@@ -11,10 +11,10 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import ShowMoreText from 'react-show-more-text';
-import ProductService from '../services/ProductService'
-import CartService from '../services/CartService'
+import ProductService from '../../services/ProductService'
+import CartService from '../../services/CartService'
 import './ProductInfo.css'
-class Product extends Component{
+class Home extends Component{
     constructor(props){
         super(props)
         this.state={
@@ -81,7 +81,7 @@ class Product extends Component{
                         <CardActionArea>
                         <CardMedia className="media"
                             component="img"
-                            alt="Furniture"
+                            alt="Instrument"
                             
                             image={item.imageUrl}
                             
@@ -139,8 +139,8 @@ class Product extends Component{
           };
         return (
             <>
-            <Navbar/>
-            <Container>
+            <UserNavbar/>
+            <Container data-testid="instrumentHomeBody">
                 <Row>
                     <Col xl={4} className="img">
                         <img className="image" src={this.state.imageUrl} id="img"></img>
@@ -179,4 +179,4 @@ class Product extends Component{
         );
     }    
 }
-export default Product
+export default Home

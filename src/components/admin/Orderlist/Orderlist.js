@@ -5,10 +5,10 @@ import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
-import AdminNavbar from './AdminNavbar'
-import OrderServices from '../services/OrderSerivces'
+import AdminNavBar from '../AdminNav/AdminNav';
+import OrderServices from '../../../services/OrderSerivces'
 import './OrdersComponent.css'
-export default class Order extends Component
+export default class Orderlist extends Component
 {
     constructor(props)
     {
@@ -28,7 +28,7 @@ export default class Order extends Component
             <>
             <TableCell className="hc" style={{textAlign:'center'}}><h4>Order ID</h4></TableCell>
             <TableCell className="hc" style={{textAlign:'center'}}><h4>User ID</h4></TableCell>
-            <TableCell className="hc" style={{textAlign:'center'}}><h4>Furniture Name</h4></TableCell>
+            <TableCell className="hc" style={{textAlign:'center'}}><h4>Instrument Name</h4></TableCell>
             <TableCell className="hc" style={{textAlign:'center'}}><h4>Price</h4></TableCell>
             <TableCell className="hc" style={{textAlign:'center'}}><h4>Quantity</h4></TableCell>
             </>
@@ -55,9 +55,9 @@ export default class Order extends Component
         const {items} = this.state;
         return (
             <>
-            <AdminNavbar/>
+            <AdminNavBar/>
             <div>
-                <TableContainer className="table">
+                <TableContainer data-testid="adminOrderBody" className="table">
                 <Table className="style" aria-label="customized table">
                 <TableHead className="head">
                     <TableRow className="hr">

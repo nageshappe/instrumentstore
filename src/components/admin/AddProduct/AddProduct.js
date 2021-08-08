@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import ProductService from '../services/ProductService';
+import ProductService from '../../../services/ProductService';
 
-export default class AddProductComponen extends Component {
+export default class AddProduct extends Component {
 
     constructor(props){
         super(props)
@@ -64,7 +64,7 @@ export default class AddProductComponen extends Component {
     render() {
         return (
             <div>
-                <div className="container">
+                <div data-testid="addInstrumentBody" className="container">
                     <div className="row">
                         <div className="card col-md-6 offset-md-3 offset-md-3">
                             <h3 className="text-center">Add Product</h3>
@@ -76,36 +76,36 @@ export default class AddProductComponen extends Component {
                                     <div className="form-group">
                                         <label>Product Name:</label>
                                         <input placeholder="Product Name" name="productName" className="form-control"
-                                        value={this.state.productName} onChange={this.changeProductName}/>
+                                        data-testid="instrumentName" value={this.state.productName} onChange={this.changeProductName}/>
 
                                     </div>
                                     <div className="form-group">
                                         <label>Product Description:</label>
                                         <input placeholder="Product Description" name="productPescription" className="form-control"
-                                        value={this.state.description} onChange={this.changeProductDescription}/>
+                                        data-testid="instrumentDescription" value={this.state.description} onChange={this.changeProductDescription}/>
 
                                     </div>
                                     <div className="form-group">
                                         <label>Product Price:</label>
                                         <input placeholder="Product Price" name="price" className="form-control"
-                                        value={this.state.price} onChange={this.changeProductPrice}/>
+                                        data-testid="instrumentPrice" value={this.state.price} onChange={this.changeProductPrice}/>
 
                                     </div>
                                     <div className="form-group">
                                         <label>Product Quantity:</label>
                                         <input placeholder="Product Quantity" name="quantity" className="form-control"
-                                        value={this.state.quantity} onChange={this.changeProductQuantity}/>
+                                        data-testid="instrumentQuantity" value={this.state.quantity} onChange={this.changeProductQuantity}/>
 
                                     </div>
                                     <div className="form-group">
                                         <label>Product Image URL:</label>
                                         <input placeholder="Product Image URL" name="imageUrl" className="form-control"
-                                        value={this.state.imageUrl} onChange={this.changeImageUrl}/>
+                                        data-testid="instrumentImageURL" value={this.state.imageUrl} onChange={this.changeImageUrl}/>
 
                                     </div>
                                    
 
-                                    <button className="btn btn-success" onClick={this.saveProduct}>Save</button>
+                                    <button data-testid="addInstrumentButton" className="btn btn-success" onClick={this.saveProduct}>ADD</button>
                                     <button className="btn btn-danger" onClick={this.cancel.bind(this)} style={{marginLeft:"10px"}}>Cancel</button>
                                 </form>
                             </div>

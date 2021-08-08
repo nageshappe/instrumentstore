@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import CartService from '../services/CartService';
-import ProductService from '../services/ProductService';
+import CartService from "../../services/CartService" 
+import ProductService from '../../services/ProductService';
 
 
 export default class AddToCart extends Component {

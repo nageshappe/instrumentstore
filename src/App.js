@@ -1,22 +1,24 @@
 import logo from './logo.svg';
 import './App.css';
-import ListProductComponent from './components/ListProductComponent';
-import Navbar from './components/UserNavbar'
+// import ListProductComponent from './components/ListProductComponent';
+import Dashboard from "./components/admin/Dashboard/Dashboard"
+// import Navbar from './components/UserNav/UserNav'
 import {BrowserRouter as Router,Route , Switch} from 'react-router-dom'
-import AddProductComponent from './components/AddProductComponent';
+import AddProduct from './components/admin/AddProduct/AddProduct';
 import EditProductComponent from './components/EditProductComponent';
-import OrdersComponents from './components/OrdersComponents';
-import HomeComponent from './components/HomeComponent';
+import Orderlist from './components/admin/Orderlist/Orderlist';
+import HomeComponent from "./components/admin/Dashboard/HomeComponent" 
 import LoginComponent from './components/LoginComponent';
-import SignupComponent from './components/SignupComponent';
+import SignupComponent from './components/Signup/SignupComponent';
 import LogoutComponent from './components/LogoutComponent'
-import  ProductInfo from './components/ProductInfo';
-import UserOrders from './components/UserOrders';
-import UserCart from './components/UserCart';
-import AddToCart from './components/AddToCart';
-import DeleteCart from './components/DeleteCart';
+import  ProductInfo from './components/UserNav/ProductInfo';
+import UserOrder from './components/UserOrder/UserOrder';
+import Cart from './components/Cart/Cart';
+import AddToCart from './components/Cart/AddToCart';
+import DeleteCart from './components/Cart/DeleteCart';
 import Protected from './components/Protected'
 import ProtectedAdmin from './components/ProtectedAdmin';
+import Home from './components/Home/Home';
 
 
 function App() {
@@ -26,20 +28,20 @@ function App() {
       <Switch>
         <Route path ="/" exact component={LoginComponent}></Route>
         
-        <Protected path='/home' exact component ={HomeComponent} />
+        <Protected path='/home' exact component ={Home} />
         <Route path ="/login"  component={LoginComponent}></Route>
         <Route path ="/signup"  component={SignupComponent}></Route>
         <Route path ="/logout"  component={LogoutComponent}></Route>
-        <ProtectedAdmin path ="/products"  component={ListProductComponent}/>
-        <ProtectedAdmin path ="/admin"  component={ListProductComponent}/>
-        <Protected path ="/cart/id"  component={UserCart}/>
-        <ProtectedAdmin path="/delete/:productId" component={ListProductComponent}/>
+        <ProtectedAdmin path ="/products"  component={Dashboard}/>
+        <ProtectedAdmin path ="/admin"  component={Dashboard}/>
+        <Protected path ="/cart/id"  component={Cart}/>
+        <ProtectedAdmin path="/delete/:productId" component={Dashboard}/>
         <Protected path="/deletecart/:productName" component={DeleteCart}/>
         <Protected path='/product-info/:productId' exact component={ProductInfo}/>
         <Protected path='/addcart/:productId' exact component={AddToCart}/>
-        <Protected path ="/orders" component={UserOrders}/>
-        <ProtectedAdmin path ="/allorders" component={OrdersComponents}/>
-        <ProtectedAdmin path ="/add-product" component={AddProductComponent}/>
+        <Protected path ="/orders" component={UserOrder}/>
+        <ProtectedAdmin path ="/allorders" component={Orderlist}/>
+        <ProtectedAdmin path ="/add-product" component={AddProduct}/>
         <ProtectedAdmin path ="/edit-product/:productId" component={EditProductComponent}/>
 
       </Switch>

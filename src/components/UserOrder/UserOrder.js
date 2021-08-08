@@ -5,10 +5,10 @@ import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
-import UserNavbar from './UserNavbar'
-import OrderService from '../services/OrderSerivces'
+import UserNavbar from '../UserNav/UserNav'
+import OrderService from '../../services/OrderSerivces'
 import './UserOrders.css'
-export default class Order extends Component
+export default class UserOrder extends Component
 {
     constructor(props)
     {
@@ -56,7 +56,7 @@ export default class Order extends Component
             <>
             <UserNavbar/>
             <div>
-                <TableContainer className="table">
+                <TableContainer data-testid="instrumentOrderBody" className="table">
                 <Table className="style" aria-label="customized table">
                 <TableHead className="head">
                     <TableRow className="hr">

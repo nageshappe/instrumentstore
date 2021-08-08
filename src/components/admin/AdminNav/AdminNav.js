@@ -1,21 +1,18 @@
 import React, { Component } from 'react';
 import { NavItem } from 'react-bootstrap';
-import {UserNavbarItems} from './UserNavbarItems';
-import './Navbar.css';
-import 'font-awesome/css/font-awesome.min.css';
-import { GuestNavbarItems } from './GuestNavbarItems';
+import {AdminNavbarItems} from './AdminNavbarItems';
 
-class Navbar extends Component
+import 'font-awesome/css/font-awesome.min.css';
+
+class AdminNavBar extends Component
 {
     state = { clicked : false}
 
     handleClick = () =>
     {
         this.setState({
-            clicked:!this.state.clicked,
-            navitems :''
+            clicked:!this.state.clicked
         })
-
     }
 
     
@@ -23,9 +20,9 @@ class Navbar extends Component
     render()
     {
         return(
-            <nav className="NavbarItems">
+            <nav data-testid="adminNavbar" className="NavbarItems">
                 <h2 className="navbar-logo">
-                    Furniture Store
+                    Instrument Store
                     <i className="fab fa-react">
 
                     </i>
@@ -34,10 +31,10 @@ class Navbar extends Component
                     <i className={this.state.clicked ? 'fa fa-times' : 'fa fa-bars'}></i>
                 </div>
                 <ul className={this.state.clicked ? 'nav-menu active' : 'nav-menu'}>
-                    {UserNavbarItems.map((item,index)=>{
+                    {AdminNavbarItems.map((item,index)=>{
                         return (
                             <li key={index}>
-                                <a className={item.cName} href={item.url}>
+                                <a data-testid={item.id} className={item.cName} href={item.url}>
                                     {item.title}
                                 </a>
                             </li>
@@ -49,4 +46,4 @@ class Navbar extends Component
         )
     }
 }
-export default Navbar;
+export default AdminNavBar;

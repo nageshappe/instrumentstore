@@ -8,10 +8,10 @@ import TableRow from '@material-ui/core/TableRow';
 import { Link } from 'react-router-dom';
 import { Button} from 'react-bootstrap';
 import DeleteIcon from '@material-ui/icons/Delete';
-import UserNavbar from './UserNavbar'
+import UserNavbar from '../UserNav/UserNav'
 import './UserCart.css'
-import CartService from '../services/CartService';
-export default class UserCart extends Component
+import CartService from '../../services/CartService';
+export default class Cart extends Component
 {
     constructor(props)
     {
@@ -90,7 +90,7 @@ export default class UserCart extends Component
             <>
             <UserNavbar/>
             <div>
-                <TableContainer className="table">
+                <TableContainer data-testid="instrumentCartBody" className="table">
                 <Table className="style" aria-label="customized table">
                 <TableHead className="head">
                     <TableRow className="hr">
